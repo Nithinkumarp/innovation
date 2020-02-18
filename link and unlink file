@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<stdlib.h>
+
+int main(int argc,char *argv[])
+{
+int ch;
+printf("enter the choice\n");
+printf("1.link\n 2.unlink\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:
+{
+int f=link(argv[1],argv[2]);
+if(f==-1)
+{
+perror("error");
+}
+
+else
+{
+printf("linked\n");
+}
+break;
+}
+case 2:
+{
+int f=link(argv[1],argv[2]);
+if(f==-1)
+{
+perror("err");
+}
+else
+{
+printf("link moved\n");
+unlink(argv[1]);
+}
+break;
+}
+}
+}
